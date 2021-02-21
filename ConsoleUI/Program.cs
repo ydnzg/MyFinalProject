@@ -17,36 +17,48 @@ namespace ConsoleUI
         private static void ProductDetailTest()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
-            foreach (var productDetail in productManager.GetProductDetails())
+
+            var result = productManager.GetProductDetails();
+
+            if (result.Success)
+
             {
-                Console.WriteLine("product id:  " + productDetail.ProductId + "/  "+
-                                  "product name:  " + productDetail.ProductName + "/  " +
-                                  "category name:  " + productDetail.CategoryName + "/  " +
-                                  "units in stock:  " + productDetail.UnitsInStock);
+
+                foreach (var productDetail in result.Data)
+                {
+                    Console.WriteLine("product id:  " + productDetail.ProductId + "/  " +
+                                      "product name:  " + productDetail.ProductName + "/  " +
+                                      "category name:  " + productDetail.CategoryName + "/  " +
+                                      "units in stock:  " + productDetail.UnitsInStock);
+                }
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
             }
 
         }
 
 
-        private static void CategoryTest()
-        {
-            CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+        //private static void CategoryTest()
+        //{
+        //    CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
-            foreach (var category in categoryManager.GetAll())
-            {
-                Console.WriteLine(category.CategoryName);
-            }
-        }
+        //    foreach (var category in categoryManager.GetAll())
+        //    {
+        //        Console.WriteLine(category.CategoryName);
+        //    }
+        //}
 
-        private static void ProductTest()
-        {
-            ProductManager productManager = new ProductManager(new EfProductDal());
+        //private static void ProductTest()
+        //{
+        //    ProductManager productManager = new ProductManager(new EfProductDal());
 
-            foreach (var product in productManager.GetByUnitPrice(40, 100))
-            {
-                Console.WriteLine(product.ProductName);
-            }
-        }
+        //    foreach (var product in productManager.GetByUnitPrice(40, 100).Data)
+        //    {
+        //        Console.WriteLine(product.ProductName);
+        //    }
+        //}
 
 
     }
