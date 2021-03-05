@@ -19,12 +19,12 @@ namespace Business.Concrete
     public class ProductManager : IProductService
     {
         IProductDal _productDal;
-        ILogger _logger;
+        
 
-        public ProductManager(IProductDal productDal, ILogger logger)
+        public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
-            _logger = logger;
+           
         }
 
 
