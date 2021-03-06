@@ -13,5 +13,6 @@ namespace Business.Constants
         public static string ProductListed="Ürünler Listelendi";
         public static string ProductCountOfCategoryError = "Bir kategoride en fazla 10 ürün olabilir";
         public static string ProductNameAlreadyExists = "Aynı isimde ürün eklenemez";
+        public static string CategoryLimitExceded = "Kategori Limiti aşıldığı için yeni ürün eklenemiyor";
     }
 }
