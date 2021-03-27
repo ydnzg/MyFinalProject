@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CrossCuttingConcerns\NewFolder\" />
+    <Folder Include="CrossCuttingConcerns\Caching\Redis\" />
   </ItemGroup>
 
 </Project>
